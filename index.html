@@ -14,17 +14,23 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0C0C0F" />
   <link rel="canonical" href="https://guruprasadpandit.github.io/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Guruprasad Pandit | Software Engineer" />
   <meta property="og:description"
     content="Software Engineer with 5 years building scalable React.js & Node.js applications. Open to new opportunities." />
   <meta property="og:url" content="https://guruprasadpandit.github.io/" />
   <meta property="og:site_name" content="Guruprasad Pandit" />
+  <meta property="og:image" content="https://guruprasadpandit.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Guruprasad Pandit | Software Engineer" />
   <meta name="twitter:description" content="5 years building scalable React.js & Node.js applications." />
+  <meta name="twitter:image" content="https://guruprasadpandit.github.io/assets/og-image.png" />
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Guruprasad Pandit","jobTitle":"Software Engineer","email":"gppandit.gp@gmail.com","telephone":"+917776088638","url":"https://guruprasadpandit.github.io","address":{"@type":"PostalAddress","addressLocality":"Ratnagiri","addressRegion":"Maharashtra","addressCountry":"IN"},"knowsAbout":["React.js","Next.js","Node.js","TypeScript","GraphQL","JavaScript","RESTful APIs","MySQL","MongoDB","PostgreSQL"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajendra Mane College of Engineering & Technology","address":{"@type":"PostalAddress","addressLocality":"Ratnagiri","addressRegion":"Maharashtra","addressCountry":"IN"}}}
+{"@context":"https://schema.org","@type":"Person","name":"Guruprasad Pandit","jobTitle":"Software Engineer","email":"gppandit.gp@gmail.com","telephone":"+917776088638","url":"https://guruprasadpandit.github.io","sameAs":["https://github.com/guru-pandit","https://www.linkedin.com/in/gppandit"],"address":{"@type":"PostalAddress","addressLocality":"Ratnagiri","addressRegion":"Maharashtra","addressCountry":"IN"},"knowsAbout":["React.js","Next.js","Node.js","TypeScript","GraphQL","JavaScript","RESTful APIs","MySQL","MongoDB","PostgreSQL"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajendra Mane College of Engineering & Technology","address":{"@type":"PostalAddress","addressLocality":"Ratnagiri","addressRegion":"Maharashtra","addressCountry":"IN"}}}
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -779,7 +785,13 @@
       background: rgba(99, 102, 241, 0.1);
       border: 1px solid rgba(99, 102, 241, 0.2);
       padding: 0.15rem 0.55rem;
-      border-radius: 100px
+      border-radius: 100px;
+      transition: background var(--transition), border-color var(--transition)
+    }
+
+    a.chip:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.5)
     }
 
     /* ── SKILLS ── */
@@ -1584,6 +1596,15 @@
                   <span class="chip">Marathi</span>
                 </div>
               </div>
+              <div class="info-row">
+                <span class="info-label">Profiles</span>
+                <div class="chips">
+                  <a href="https://github.com/guru-pandit" target="_blank" rel="noopener noreferrer"
+                    class="chip">GitHub</a>
+                  <a href="https://www.linkedin.com/in/gppandit" target="_blank" rel="noopener noreferrer"
+                    class="chip">LinkedIn</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1785,7 +1806,8 @@
             <div class="proj-glow" aria-hidden="true"></div>
             <div class="proj-top">
               <span class="proj-num">05 / 05</span>
-              <div class="proj-arr" aria-hidden="true">↗</div>
+              <a href="https://chaitanyastores.com" target="_blank" rel="noopener noreferrer" class="proj-arr"
+                aria-label="Visit Chaitanya Stores live site">↗</a>
             </div>
             <h3 class="proj-name">Chaitanya Stores</h3>
             <p class="proj-desc">Freelance product catalog website for pooja and religious materials — designed,
@@ -1798,7 +1820,10 @@
             <ul class="proj-pts">
               <li>Fully responsive product catalog built from scratch</li>
               <li>Product listing & category browsing with SEO-optimised pages</li>
-              <li>Live at chaitanyastores.com</li>
+              <li>Live at <a href="https://chaitanyastores.com" target="_blank"
+                  rel="noopener noreferrer">chaitanyastores.com</a> · <a
+                  href="https://github.com/guru-pandit/chaitanya-stores" target="_blank"
+                  rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </article>
         </div>
@@ -1837,6 +1862,9 @@
         <div class="contact-links reveal d2">
           <a href="tel:+917776088638" class="c-link">📞 Call</a>
           <a href="mailto:gppandit.gp@gmail.com" class="c-link">✉ Email</a>
+          <a href="https://github.com/guru-pandit" target="_blank" rel="noopener noreferrer" class="c-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/gppandit" target="_blank" rel="noopener noreferrer"
+            class="c-link">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -1857,13 +1885,16 @@
       </div>
       <span class="foot-name">Guruprasad Pandit</span>
     </a>
-    <p class="foot-copy">© 2025 <span>Guruprasad Pandit</span>. All rights reserved.</p>
+    <p class="foot-copy">© <span id="year"></span> <span>Guruprasad Pandit</span>. All rights reserved.</p>
     <p class="foot-copy">Made with <span>♥</span> in Maharashtra</p>
   </footer>
 
   <script>
     (function () {
       'use strict';
+
+      // FOOTER YEAR
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       // TYPEWRITER
       var phrases = ['React.js Developer', 'Node.js Engineer', 'Full Stack Engineer', 'TypeScript Specialist', 'UI/UX Craftsman'];
